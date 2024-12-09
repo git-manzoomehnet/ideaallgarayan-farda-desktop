@@ -176,3 +176,7 @@ a {
 .activeImgScroll::after{
   transform: scaleY(0)!important;
 }
+
+.w-90p {
+  max-width: 1300px;
+}
