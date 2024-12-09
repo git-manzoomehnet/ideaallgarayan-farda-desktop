@@ -21,6 +21,8 @@ module.exports = {
       light_gray: "#E8E1E3",
       white: "#FFFFFF",
       black: "#000000",
+     mediumGray :"#7E7E7E",
+     dark:'#181818'
      
     },
     fontFamily: {
@@ -69,11 +71,15 @@ module.exports = {
         24.18: "24.18px",
         27.09: "27.09px",
         20.15: "20.15px",
+        23.48: "23.48px",
+
       },
 
       width: {
         "85p": "85%",
         "90p": "90%",
+        "95p": "95%",
+
       },
       maxWidth: {
         x100: "100%",
