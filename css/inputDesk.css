@@ -285,3 +285,23 @@ filter: grayscale(0) !important;
     left: 7%;
     top: 46%;
   }
+  .blog-C header{
+    background-color: #E8E1E380;
+  }
+  .blog-C header a{
+color: #181818;
+  }
+  .blog-C header .logoWhite{
+    opacity: 0;
+    pointer-events: none;
+  }
+  .blog-C header .logoDark{
+    opacity: 1;
+    pointer-events: all;
+  }
+  .blog-C header .searchIcon svg path{
+    fill: #181818;
+  }
+  .blog-C header{
+    border-bottom: 1px solid #181818;
+  }
