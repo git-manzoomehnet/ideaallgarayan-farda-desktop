@@ -1,0 +1,31 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]">
+    <member name="blog" type="list" size="349x289" propertyid="7244,7249"
+     postsql=" select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.blog]"/>
+</basis>
+<basis core="print" datamembername="db.blog">
+               <layout>
+                   @child
+               </layout>
+               <face>
+                   <a href="@link" alt="@title" title="@title" rel="noopener" aria-label=" @title " class="blog w-full flex flex-col
+                   gap-3 duration-1000 hover:bg-white translate-y-[2em] opacity-0
+                   py-[1em] rounded-[30px] border-[1px] border-dark">
+                      <div class="IMG w-90p mx-auto flex justify-center items-center rounded-[30px]">
+                          <img src="@00349X00289prp" alt="@title" title="@title" class="w-full rounded-[30px] object-cover">
+                      </div>
+                      <div class="Title w-90p mx-auto flex justify-between items-center">
+                          <span class="text font-IRANSans500 font-medium text-lg leading-28.17 text-dark text-right">
+                           @title
+                          </span>
+                          <span class="date font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark text-right">
+                           @prp_7249
+                          </span>
+                      </div>
+                      <div class="text w-90p mx-auto flex flex-col">
+                          <p class="font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark text-justify">
+                         @substr
+                        </p>
+                      </div>
+                  </a>
+               </face>
+           </basis>

@@ -26,12 +26,12 @@
 }
 @font-face {
   font-family: "YekanBakh700";
-  src: url("../_fonts/Yekan Bakh FA 06 Bold.eot");
-  src: url("../_fonts/Yekan Bakh FA 06 Bold.eot?#iefix")
+  src: url("../_fonts/YekanBakh-Heavy.eot");
+  src: url("../_fontsYekanBakh-Heavy.eot?#iefix")
       format("embedded-opentype"),
-    url("../_fonts/Yekan Bakh FA 06 Bold.woff") format("woff"),
-    url("../_fonts/Yekan Bakh FA 06 Bold.woff2") format("woff2"),
-    url("../_fonts/Yekan Bakh FA 06 Bold.ttf") format("truetype");
+    url("../_fonts/YekanBakh-Heavy.woff") format("woff"),
+    url("../_fonts/YekanBakh-Heavy.woff2") format("woff2"),
+    url("../_fonts/YekanBakh-Heavy.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -464,9 +464,39 @@ color: #181818;
 .aboutUs .section10 .gallerySlider .swiper-slide img {
   width: 100%;
   transition: all 0.4s ease;
-  transform: scale(0.6) translateY(100px);
+  transform: scale(0.3) translateY(100px);
 }
 
 .aboutUs .section10 .gallerySlider .swiper-slide-active img {
   transform: scale(1) translateY(0);
+}
+.contactUs header{
+  position: relative;
+}
+
+.home .section-4 .text p{
+font-size: 15px;
+font-weight: 400;
+line-height: 23.48px;
+color: white;
+font-family: "IRANSans400";
+}
+.home .section-4,
+.home .section-1,
+.home .section-2{
+  position: relative;
+}
+
+.home .section-4::before,
+.home .section-1::before,
+.home .section-2::before{
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background-color: #4343433e;
 }

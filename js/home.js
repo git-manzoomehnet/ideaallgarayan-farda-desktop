@@ -101,7 +101,7 @@ let sections = document.querySelectorAll('.section')
 // news slider
   let NewsSlider = new Swiper('.swiper-news',{
     speed: 1000,
-    slidesPerView:2,
+    slidesPerView:'auto',
     spaceBetween: 30,
     grabCursor:true, 
   })
@@ -117,15 +117,15 @@ let sections = document.querySelectorAll('.section')
 })
 
 // gallery slider
-let gallerySlider = new Swiper('.swiper-gallery ',{
-  speed: 1000,
-  slidesPerView:3,
-  spaceBetween: 0,
-  grabCursor:true, 
-  centeredSlides: true,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  }
-})
+// let gallerySlider = new Swiper('.swiper-gallery ',{
+//   speed: 1000,
+//   slidesPerView:3,
+//   spaceBetween: 0,
+//   grabCursor:true, 
+//   centeredSlides: true,
+//   loop: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev"
+//   }
+// })

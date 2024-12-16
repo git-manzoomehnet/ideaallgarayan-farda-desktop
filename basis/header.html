@@ -57,12 +57,12 @@ flex justify-center border-b-[1px] border-b-white [&.pink]:border-dark_gray" dir
           <div class="Middle w-full flex justify-center items-center">
            <div class="logo w-full flex justify-center">
                <a href="/"  alt="صفحه نخست" rel="noopener" aria-label="صفحه نخست"  title="صفحه نخست"  class="w-full flex justify-center items-center relative">
-                   <span class="logoWhite absolute z-1 group-[&.pink]/header:opacity-0 duration-200 group-[&.pink]/header:pointer-events-none">
-                       <img src="[##cms.cms.cdn##]/images/logo-b.png" alt="صفحه نخست"  title="صفحه نخست" >
-                   </span>
-                   <span class="logoDark absolute z-1 opacity-0 pointer-events-none group-[&.pink]/header:opacity-[1] duration-200 group-[&.pink]/header:pointer-events-auto">
-                       <img src="[##cms.cms.cdn##]/images/logo B  (25) 1.png" alt="صفحه نخست"  title="صفحه نخست">
-                   </span>
+                <span class="logoWhite absolute z-1 group-[&.pink]/header:opacity-0 duration-200 group-[&.pink]/header:pointer-events-none">
+                    <img src="[##cms.cms.cdn##]/images/logo white 1.png" alt="صفحه نخست"  title="صفحه نخست">
+                </span>
+                <span class="logoDark absolute z-1 opacity-0 pointer-events-none group-[&.pink]/header:opacity-[1] duration-200 group-[&.pink]/header:pointer-events-auto">
+                    <img src="[##cms.cms.cdn##]/images/logodark.png" alt="صفحه نخست"  title="صفحه نخست">
+                </span>
                </a>
            </div>
           </div>
@@ -95,7 +95,7 @@ left-0 right-0 flex justify-between items-center rounded-br-[100px] [&.openMenu]
     <div class="innerMneu w-95p mx-auto flex justify-between items-center">
         <div class="Right w-[50%] flex justify-start items-start">
             <div class="Procats-container w-full flex flex-wrap gap-[1.5em]">
-               <div class="ProCat w-auto flex flex-col gap-4">
+              
                 <basis core="tree" datamembername="db.productCat" idcol="catid" parentidcol="parentid" nullvalue="211813">
                     <layout>
                         @child
@@ -110,19 +110,19 @@ left-0 right-0 flex justify-between items-center rounded-br-[100px] [&.openMenu]
                  
                     </face>
                     <face level="1">
+                        <div class="ProCat w-auto flex flex-col gap-4">
                         <div class="titleCat procatsItems w-auto flex justify-start items-start " data-bg="[##cms.cms.cdn##]/images/menu.jpg">
-                            <p class="font-IRANSans400 font-normal text-xs leading-18.78 text-mediumGray text-right">
+                            <a href="@link" alt=" @title" title=" @title"  rel="noopener" aria-label=" @title " class="font-IRANSans400 font-normal text-xs leading-18.78 text-mediumGray text-right">
                                 @title
-                            </p>
+                            </a>
                         </div>
                         <ul class="cats w-auto flex flex-col gap-[.5em] justify-start items-start">
                             @child
                         </ul>
+                        </div>
                     </face>
                 </basis>
-                 
-               
-               </div>
+          
             
             </div>
            </div>
