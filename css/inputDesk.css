@@ -107,7 +107,7 @@ a {
   font-size: 14px;
   font-family: "IRANSans400";
   line-height: 24px;
-  color: #FC578C;
+  color: #fc578c;
 }
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -134,7 +134,7 @@ a {
   width: 25px;
   height: 50px;
   display: grid;
-  color: #FC578C;
+  color: #fc578c;
   background: linear-gradient(currentColor 0 0) top/100% 2px,
     radial-gradient(
         farthest-side at top,
@@ -171,168 +171,166 @@ a {
     transform: rotate(1turn);
   }
 }
-  h1 {
-    font-size: 24px;
-    font-family: "IRANSans700";
-    line-height: 26px;
-  }
-  h2 {
-    font-size: 20px;
-    font-family: "IRANSans700";
-    line-height: 26px;
-  }
-  h3 {
-    font-size: 18px;
-    font-family: "IRANSans500";
-    line-height: 25px;
-  }
-  h4,
-  h5 {
-    font-size: 16px;
-    font-family: "IRANSans400";
-    line-height: 24px;
-  }
-  h6 {
-    font-size: 14px;
-    font-family: "IRANSans400";
-    line-height: 22px;
-  }
-  a {
-    font-size: 14px;
-    font-family: "IRANSans500";
-    line-height: 24px;
-  }
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: #f5f5f5;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 2px;
-    background-color: #f5f5f5;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #555;
-  }
-  html,body{
-padding: 0;
-margin: 0;
-box-sizing: border-box;
-/* scroll-behavior: smooth; */
-  }
-  .section{
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-
-
-.activeImgScroll::after{
-  transform: scaleY(0)!important;
+h1 {
+  font-size: 24px;
+  font-family: "IRANSans700";
+  line-height: 26px;
+}
+h2 {
+  font-size: 20px;
+  font-family: "IRANSans700";
+  line-height: 26px;
+}
+h3 {
+  font-size: 18px;
+  font-family: "IRANSans500";
+  line-height: 25px;
+}
+h4,
+h5 {
+  font-size: 16px;
+  font-family: "IRANSans400";
+  line-height: 24px;
+}
+h6 {
+  font-size: 14px;
+  font-family: "IRANSans400";
+  line-height: 22px;
+}
+a {
+  font-size: 14px;
+  font-family: "IRANSans500";
+  line-height: 24px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
 }
 
-.w-90p,.w-95p {
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* scroll-behavior: smooth; */
+}
+.section {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.activeImgScroll::after {
+  transform: scaleY(0) !important;
+}
+
+.w-90p,
+.w-95p {
   max-width: 1300px;
 }
-header.pink .searchIcon svg path{
+header.pink .searchIcon svg path {
   fill: #434343;
-
 }
-.scrollTop.white svg path{
+.scrollTop.white svg path {
   fill: #434343;
 }
 .swiper-gallery .swiper-slide-active .IMG,
-.swiper-gallery .swiper-slide-active{
-transform: scale(1) !important;
+.swiper-gallery .swiper-slide-active {
+  transform: scale(1) !important;
 }
-.swiper-gallery .swiper-slide-active .IMG img{
-filter: grayscale(0) !important;
-  }
- 
-  .swiper-gallery .swiper-slide .IMG{
-    transform: scale(.5);
-  
-  }
-  .swiper-gallery .swiper-slide-prev .IMG{
-    transform-origin: right;
-  }
-  .swiper-gallery .swiper-slide-next .IMG{
-    transform-origin: left;
-  }
-  .gallery-container .swiper-button-prev,
- .gallery-container .swiper-button-next{
-   position: absolute;
-   margin: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
-  .gallery-container .swiper-button-next::after,
-  .learning-C .swiper-button-next::after,
-  .gallery-container .swiper-button-prev::after,
-  .learning-C .swiper-button-prev::after,
-  .gallery-container .swiper-button-next::before,
-  .learning-C .swiper-button-prev::before,
-  .gallery-container .swiper-button-prev::before,
-  .learning-C .swiper-button-next::before{
-    content: none;
-  }
-  .gallery-container .swiper-button-next{
-    right: 7%;
-    top: 46%;
-  }
-  .gallery-container .swiper-button-prev{
-    left: 7%;
-    top: 46%;
-  }
-  .blog-C header,
-  .articleShow header,
-  .learning-C header,
-  .eventlist-C header,
-  .eventShow header{
-    background-color: #E8E1E380;
-  }
-  .blog-C header a,
-  .articleShow header a,
-  .learning-C header a,
-  .eventlist-C header a,
-  .eventShow header a{
-color: #181818;
-  }
-  .blog-C header .logoWhite,
-  .articleShow header .logoWhite,
-  .learning-C header .logoWhite,
-  .eventlist-C header .logoWhite,
-  .eventShow header .logoWhite{
-    opacity: 0;
-    pointer-events: none;
-  }
-  .blog-C header .logoDark,
-  .articleShow header .logoDark,
-  .learning-C header .logoDark,
-  .eventlist-C header .logoDark,
-  .eventShow header .logoDark{
-    opacity: 1;
-    pointer-events: all;
-  }
-  .blog-C header .searchIcon svg path,
-  .articleShow header .searchIcon svg path,
-  .learning-C header .searchIcon svg path,
-  .eventlist-C header .searchIcon svg path,
-  .eventShow header .searchIcon svg path{
-    fill: #181818;
-  }
-  .blog-C header,
-  .articleShow header,
-  .learning-C header,
-  .eventlist-C header,
-  .eventShow header{
-    border-bottom: 1px solid #181818;
-  }
+.swiper-gallery .swiper-slide-active .IMG img {
+  filter: grayscale(0) !important;
+}
+
+.swiper-gallery .swiper-slide .IMG {
+  transform: scale(0.5);
+}
+.swiper-gallery .swiper-slide-prev .IMG {
+  transform-origin: right;
+}
+.swiper-gallery .swiper-slide-next .IMG {
+  transform-origin: left;
+}
+.gallery-container .swiper-button-prev,
+.gallery-container .swiper-button-next {
+  position: absolute;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-container .swiper-button-next::after,
+.learning-C .swiper-button-next::after,
+.gallery-container .swiper-button-prev::after,
+.learning-C .swiper-button-prev::after,
+.gallery-container .swiper-button-next::before,
+.learning-C .swiper-button-prev::before,
+.gallery-container .swiper-button-prev::before,
+.learning-C .swiper-button-next::before {
+  content: none;
+}
+.gallery-container .swiper-button-next {
+  right: 7%;
+  top: 46%;
+}
+.gallery-container .swiper-button-prev {
+  left: 7%;
+  top: 46%;
+}
+.blog-C header,
+.articleShow header,
+.learning-C header,
+.eventlist-C header,
+.eventShow header {
+  background-color: #e8e1e380;
+}
+.blog-C header a,
+.articleShow header a,
+.learning-C header a,
+.eventlist-C header a,
+.eventShow header a {
+  color: #181818;
+}
+.blog-C header .logoWhite,
+.articleShow header .logoWhite,
+.learning-C header .logoWhite,
+.eventlist-C header .logoWhite,
+.eventShow header .logoWhite {
+  opacity: 0;
+  pointer-events: none;
+}
+.blog-C header .logoDark,
+.articleShow header .logoDark,
+.learning-C header .logoDark,
+.eventlist-C header .logoDark,
+.eventShow header .logoDark {
+  opacity: 1;
+  pointer-events: all;
+}
+.blog-C header .searchIcon svg path,
+.articleShow header .searchIcon svg path,
+.learning-C header .searchIcon svg path,
+.eventlist-C header .searchIcon svg path,
+.eventShow header .searchIcon svg path {
+  fill: #181818;
+}
+.blog-C header,
+.articleShow header,
+.learning-C header,
+.eventlist-C header,
+.eventShow header {
+  border-bottom: 1px solid #181818;
+}
 .articleShow .textContainer .title h2,
 .articleShow .textContainer .title h3,
 .articleShow .textContainer .title h4,
@@ -342,18 +340,18 @@ color: #181818;
 .eventShow .textContainer .title h3,
 .eventShow .textContainer .title h4,
 .eventShow .textContainer .title h5,
-.eventShow .textContainer .title h6{
-font-size: 18px;
-font-weight: 500;
-line-height: 28.17px;
-color: #434343;
-font-family: "IRANSans500";
-transform: translateY(3em);
-opacity: 0;
-transition: all .4s ease;
+.eventShow .textContainer .title h6 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28.17px;
+  color: #434343;
+  font-family: "IRANSans500";
+  transform: translateY(3em);
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 .articleShow .textContainer .text p,
-.eventShow .textContainer .text p{
+.eventShow .textContainer .text p {
   font-size: 15px;
   font-weight: 400;
   line-height: 23.48px;
@@ -361,18 +359,14 @@ transition: all .4s ease;
   font-family: "IRANSans400";
   opacity: 0;
   transform: translateY(3em);
-  transition: all .4s ease;
-  }
- 
+  transition: all 0.4s ease;
 }
-
 
 .aboutUs .section10 .gallerySlider .swiper-slide img {
   width: 100%;
   transition: all 0.4s ease;
   transform: scale(0.6) translateY(100px);
 }
-
 
 .aboutUs .section10 .gallerySlider .swiper-slide-active img {
   transform: scale(1) translateY(0);
