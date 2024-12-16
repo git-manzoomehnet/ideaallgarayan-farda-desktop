@@ -815,6 +815,16 @@ video {
   margin-bottom: auto;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -885,6 +895,14 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-\[1\.5em\] {
@@ -1055,6 +1073,14 @@ video {
   height: 100svh;
 }
 
+.max-h-\[304px\] {
+  max-height: 304px;
+}
+
+.max-h-\[718px\] {
+  max-height: 718px;
+}
+
 .min-h-\[348px\] {
   min-height: 348px;
 }
@@ -1072,12 +1098,16 @@ video {
   width: fit-content !important;
 }
 
+.w-85p {
+  width: 85%;
+}
+
 .w-90p {
   width: 90%;
 }
 
 .w-95p {
-  width: 95%;
+  width: 90%;
 }
 
 .w-\[10px\] {
@@ -1156,6 +1186,10 @@ video {
 
 .max-w-\[229px\] {
   max-width: 229px;
+}
+
+.max-w-\[259px\] {
+  max-width: 259px;
 }
 
 .max-w-\[298px\] {
@@ -1240,6 +1274,11 @@ video {
 
 .-rotate-90 {
   --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-180 {
+  --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2165,6 +2204,10 @@ video {
   border-radius: 0.25rem;
 }
 
+.rounded-\[15px\] {
+  border-radius: 15px;
+}
+
 .rounded-\[20px\] {
   border-radius: 20px;
 }
@@ -2269,6 +2312,10 @@ video {
 
 .border {
   border-width: 1px;
+}
+
+.border-0 {
+  border-width: 0px;
 }
 
 .border-\[1px\] {
@@ -2585,6 +2632,11 @@ video {
   padding-right: 0.375rem;
 }
 
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2633,6 +2685,16 @@ video {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 
 .py-3 {
@@ -2707,6 +2769,10 @@ video {
 
 .pt-4 {
   padding-top: 1rem;
+}
+
+.pt-\[120px\] {
+  padding-top: 120px;
 }
 
 .pt-\[140px\] {
@@ -3722,7 +3788,8 @@ header.pink .searchIcon svg path{
   .articleShow header,
   .learning-C header,
   .eventlist-C header,
-  .eventShow header{
+  .eventShow header,
+  .productShow header{
   background-color: #E8E1E380;
 }
 
@@ -3730,7 +3797,8 @@ header.pink .searchIcon svg path{
   .articleShow header a,
   .learning-C header a,
   .eventlist-C header a,
-  .eventShow header a{
+  .eventShow header a,
+  .productShow header a{
   color: #181818;
 }
 
@@ -3738,7 +3806,8 @@ header.pink .searchIcon svg path{
   .articleShow header .logoWhite,
   .learning-C header .logoWhite,
   .eventlist-C header .logoWhite,
-  .eventShow header .logoWhite{
+  .eventShow header .logoWhite,
+  .productShow header .logoWhite{
   opacity: 0;
   pointer-events: none;
 }
@@ -3747,7 +3816,8 @@ header.pink .searchIcon svg path{
   .articleShow header .logoDark,
   .learning-C header .logoDark,
   .eventlist-C header .logoDark,
-  .eventShow header .logoDark{
+  .eventShow header .logoDark,
+  .productShow header .logoDark{
   opacity: 1;
   pointer-events: all;
 }
@@ -3756,7 +3826,8 @@ header.pink .searchIcon svg path{
   .articleShow header .searchIcon svg path,
   .learning-C header .searchIcon svg path,
   .eventlist-C header .searchIcon svg path,
-  .eventShow header .searchIcon svg path{
+  .eventShow header .searchIcon svg path,
+  .productShow header .searchIcon svg path{
   fill: #181818;
 }
 
@@ -3764,7 +3835,8 @@ header.pink .searchIcon svg path{
   .articleShow header,
   .learning-C header,
   .eventlist-C header,
-  .eventShow header{
+  .eventShow header,
+  .productShow header{
   border-bottom: 1px solid #181818;
 }
 
@@ -3798,6 +3870,14 @@ header.pink .searchIcon svg path{
   opacity: 0;
   transform: translateY(3em);
   transition: all .4s ease;
+}
+
+html{
+  font-size: unset !important;
+}
+
+a:hover{
+  text-decoration: none !important;
 }
 
 @media (min-width: 480px) {
@@ -3887,6 +3967,10 @@ header.pink .searchIcon svg path{
   content: var(--tw-content);
 }
 
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
+}
+
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
@@ -3905,6 +3989,16 @@ header.pink .searchIcon svg path{
   color: rgb(126 126 126 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.hover\:outline-none:hover {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .hover\:before\:w-full:hover::before {
   content: var(--tw-content);
   width: 100%;
@@ -3918,6 +4012,16 @@ header.pink .searchIcon svg path{
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
+}
+
+.focus\:text-white:focus {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .focus\:hover\:text-center:hover:focus {
@@ -4087,4 +4191,3 @@ header.pink .searchIcon svg path{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
- 
