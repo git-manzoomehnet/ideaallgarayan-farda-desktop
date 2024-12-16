@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اسلایدر با عکس وسط بزرگتر</title>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .swiper-container {
+      width: 100%;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.4s ease;
+    }
+
+    /* عکس‌ها در ابتدا کوچک هستند */
+    .swiper-slide img {
+      width: 100%;
+      transition: all 0.4s ease;
+      transform: scale(0.6) translateY(100px);
+    }
+
+    /* عکس وسط بزرگ می‌شود */
+    .swiper-slide-active img {
+      transform: scale(1) translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Container اصلی Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/2.png" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="images/2.png" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="images/2.png" alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="images/2.png" alt="Slide 4"></div>
+      <div class="swiper-slide"><img src="images/2.png" alt="Slide 5"></div>
+    </div>
+    <!-- دکمه‌های ناوبری -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 2, /* تعداد اسلایدها در یک زمان */
+      spaceBetween: -60, /* کاهش فاصله بین اسلایدها */
+      centeredSlides: true, /* عکس وسط در مرکز قرار می‌گیرد */
+      loop: true, /* اسلایدر به صورت حلقه‌ای */
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1" >
+    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" catid="[##cms.query.catid##]"> 
+    <member name="list" size="279x304" type="list"/>
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20">
+    <member request="navcatid" type="tree" name="nav" parentid="[##cms.query.catid##]" />
+</basis>
+
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20">
+    <member request="cat" type="tree" name="productCatt" parentid="[##cms.query.catid##]" />
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <basis core="call" file="styles.inc" />
+</head>
+
+<body>
+    <main class="productList bg-light_gray" dir="rtl">
+        <div class="listContainer pb-12 pt-[140px] w-90p mx-auto grid grid-cols-4 gap-12">
+            <div class="infoList flex flex-col justify-center">
+                <div class="breadcrumb mb-2.5">
+                    <ul class="flex items-center gap-x-2.5">
+
+                        <basis core="print" datamembername="db.nav">
+                          
+                            <face filter="parentcatid not in (211479,'[##cms.query.catid##]')">
+                                <li class="flex items-center gap-x-2.5">
+                                    <a class="font-YekanBakh700 text-xl text-dark_gray" href="/@link">
+                                        @title
+                                    </a>
+                                    <span class="font-YekanBakh700 text-xl text-dark_gray">
+                                        /
+                                    </span>
+                                </li>
+                                
+                            </face>
+                        </basis>
+
+                        <basis core="print" datamembername="db.nav">
+                        
+                            <face filter="parentcatid='[##cms.query.catid##]'">
+                                <li>
+                                    <h2 class="font-YekanBakh700 text-xl text-main"> @title</h2>
+                                </li>
+                                
+                            </face>
+                        </basis>
+                    </ul>
+                </div>
+                <basis core="print" datamembername="db.productCatt">
+                
+                    <face filter="catid = '[##cms.query.catid##]'">
+                        <h1 class="font-YekanBakh700 text-[32px] mb-6 text-dark_gray">
+                          @title
+                        </h1>
+                        <div class="para font-IRANSans400 text-[15px] text-justify text-dark_gray">
+                           <p>
+                            @urldescription
+                           </p>
+                        </div>
+                        
+                    </face>
+                </basis>
+            </div>
+
+            <basis core="print" datamembername="db.list">
+            
+                <face>
+                    <div class="productBox">
+                        <div class="imgS mb-5">
+                            <a href="/@link" class="w-full" title="@title">
+                                <img class="w-full" src="[##cms.cms.cdn##]/@00279X00304prp" alt="@title" title="@title" />
+                            </a>
+                        </div>
+                        
+                        <a href="/@link" class="w-full" title="@title">
+                        <h3 class="font-IRANSans500 text-lg text-dark_gray"> @title</h3>
+                        </a>
+                    </div>
+                    
+                </face>
+            </basis>
+        </div>
+    </main>
+
+
+    <basis core="call" file="script.inc" />
+
+</body>
+
+</html>
