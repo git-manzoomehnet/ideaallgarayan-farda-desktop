@@ -1,0 +1,81 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
+    <member name="article" type="view"/> 
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
+    <member name="title" type="view" postsql="select * from [db.title] where TypeID=150"/> 
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
+    <member name="text" type="view" postsql="select * from [db.text] where TypeID=250"/> 
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]"> 
+    <member name="articleGallery" type="list" format="4"/> 
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+ </basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[##cms.seo.title##]</title>
+    <meta name="description" content="[##cms.seo.description##]">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+</head>
+<body>
+    <main class="articleShow overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
+      <div class="articleShow-container mt-[6em] w-90p mx-auto flex flex-col max-w-[1300px]">
+        <div class="Title w-full overflow-hidden flex justify-start my-[2em] items-start">
+            <h1 class="font-YekanBakh700 translate-y-[3em] opacity-0 font-semibold text-xl leading-31 text-dark_gray text-right">
+              [##db.title.Answer##]
+            </h1>
+        </div>
+        <div class="Banner w-full flex justify-center items-center rounded-[50px]">
+            <basis core="print" datamembername="db.articleGallery">
+                <layout>
+                    @child
+                </layout>
+                <face filter="ord=1000">
+                    <img src="@largeIMG" alt="[##db.title.Answer##]" title="[##db.title.Answer##]" class="w-full object-cover rounded-[50px]">
+                </face>
+            </basis>
+       
+        </div>
+        <div class="textContainer gap-[1em] mb-[2em] w-full flex justify-start items-center flex-col mt-[1.5em]">
+         
+                <basis core="print" datamembername="db.text">
+                    <layout>
+                        <div class="TextC w-full flex flex-col justify-start items-start gap-[1em]">
+                        @child
+                        </div>
+                    </layout>
+                    <face>
+                        <div class="title overflow-hidden w-auto flex justify-start items-start">
+                            <h2 class="font-IRANSans500 font-medium text-lg leading-28.17 text-dark_gray text-right">
+                                @text
+                            </h2>
+                        </div>
+                        <div class="text w-auto overflow-hidden flex justify-start items-start flex-col">
+                            <p  class="font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark_gray text-right">
+                            @largetext
+                         </p>
+                        </div>
+                    </face>
+                </basis>
+      
+               
+            </div>
+          
+     
+      </div>
+
+      <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />     
+    </main>
+    <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/js/article.js"></script>
+    <script type="application/ld+json">
+        [##json.fq.column1##]
+      </script>
+</body>
+</html>

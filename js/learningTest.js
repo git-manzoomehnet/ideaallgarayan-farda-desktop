@@ -22,16 +22,8 @@ var mySwiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-const lenis = new Lenis({
-  smoothWheel: true,
-});
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
 
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+gsap.registerPlugin( ScrollTrigger);
 let workInfoItems = document.querySelectorAll(".pinScroll .IMG");
 workInfoItems.forEach(function (item, index) {
   item.style.zIndex = workInfoItems.length - index;
@@ -43,10 +35,10 @@ gsap.set(".pinScroll .IMG", {
   },
   scale: 1.3,
 });
-gsap.set(".rChoice-Container .box .inner", {
-  opacity: 0,
-});
-const animation = gsap.to(".section2 .IMG:not(:last-child)", {
+// gsap.set(".rChoice-Container .box .inner", {
+//   opacity: 0,
+// });
+const animation = gsap.to(".section2 .IMG", {
   clipPath: function () {
     return "inset(0px 0px 100% 0px)";
   },
@@ -59,8 +51,25 @@ const animation = gsap.to(".section2 .IMG:not(:last-child)", {
 const scrollSections = gsap.utils.toArray(".textContainer .box .inner");
 scrollSections.forEach((section, i) => {
   const link1 = scrollSections[i];
-  gsap.to(".textContainer .box .inner", {
+  gsap.to(".textContainer .box .inner h4", {
     opacity: 1,
+    y:0,
+    scrollTrigger: {
+      trigger: ".rChoice-Container",
+
+      start: "top top",
+      end: () => `+=100%`,
+      pin: true,
+      pinSpacing: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      stagger: 1,
+    },
+    stagger: 1,
+  });
+  gsap.to(".textContainer .box .inner p", {
+    opacity: 1,
+    y:0,
     scrollTrigger: {
       trigger: ".rChoice-Container",
 
@@ -119,35 +128,6 @@ let scroll = ScrollTrigger.create({
 //   });
 //   })
 
-let navLinks = document.querySelectorAll(".navigations .nav");
-const imgSections = document.querySelectorAll(".section2 .IMG");
-
-navLinks.forEach((link, index) => {
-  link.addEventListener("click", (e) => {
-  console.log("click");
-  
-    e.preventDefault();
-
-    // حذف کلاس active از تمام دکمه‌ها و اضافه کردن به دکمه کلیک‌شده
-    navLinks.forEach((item) => item.classList.remove("active"));
-    link.classList.add("active");
-
-    // هدف‌گیری سکشن IMG متناظر
-    const targetSection = imgSections[index];
-    lenis.scrollTo(targetSection, {
-      duration: 1.5,
-      easing: (x) => 1 - Math.pow(1 - x, 3), // تنظیم نرمی حرکت
-    });
-    // استفاده از GSAP برای scrollTo به سکشن مورد نظر
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: {
-        y: targetSection,
-        autoKill: false,
-      },
-    });
-  });
-});
 
 // navigationsDot.forEach((element,i) => {
 //     element.addEventListener("click" , function(params) {

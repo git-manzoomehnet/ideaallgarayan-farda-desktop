@@ -1,0 +1,1 @@
+let blogs=document.querySelectorAll(".blog");blogs.forEach((o=>{gsap.to(o,{y:0,opacity:1,scrollTrigger:{trigger:o,start:"top 100%",end:"bottom bottom"}})}));

@@ -3544,6 +3544,10 @@ video {
   transition-duration: 500ms;
 }
 
+.duration-700 {
+  transition-duration: 700ms;
+}
+
 .duration-\[\.4s\] {
   transition-duration: .4s;
 }

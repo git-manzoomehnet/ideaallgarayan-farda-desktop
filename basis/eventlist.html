@@ -1,0 +1,58 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="211807"> 
+    <member name="eventList" type="list" size="349x289" propertyid="7244,7249" postsql=" select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.eventList]"/> 
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اخبار</title>
+    <meta name="description" content="اخبار">
+    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+</head>
+<body class="bg-light_gray">
+    <main class="eventlist-C overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
+       <div class="blog-container w-95p flex-col flex mx-auto mt-[8em]">
+        <div class="Title w-auto my-[1em] flex justify-start items-start">
+            <h1 class="font-YekanBakh700 font-semibold text-[32px] leading-[49.6px] text-dark_gray text-right">
+                رویداد‌ها
+            </h1>
+        </div>
+    
+        <div class="blogList gap-[3em] w-full max-w-[1300px] grid grid-cols-3 my-[3em]">
+            <basis core="print" datamembername="db.eventList">
+                <layout>
+                    @child
+                </layout>
+                <face>
+                    <a href="@link" alt="@title" title="@title" rel="noopener" aria-label=" @title " class="blog w-full flex flex-col
+                    gap-3 duration-1000 hover:bg-white translate-y-[2em] opacity-0
+                    py-[1em] border-[1px] border-dark">
+                       <div class="IMG w-90p mx-auto flex justify-center items-center">
+                           <img src="[##cms.cms.cdn##]/@00349X00289prp" alt="@title" title="@title" class="w-full object-cover">
+                       </div>
+                       <div class="Title w-90p mx-auto flex justify-between items-center">
+                           <span class="text font-IRANSans500 font-medium text-lg leading-28.17 text-dark text-right">
+                               @title
+                           </span>
+                           <span class="date font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark text-right">
+                              @prp_7249
+                           </span>
+                       </div>
+                       <div class="text w-90p mx-auto flex flex-col">
+                           <p class="font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark text-justify">
+                           @substr
+                        </p>
+                       </div>
+                   </a>
+                </face>
+            </basis>
+        </div>
+       </div>
+       <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />     
+    </main>
+    <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
+    <script src="[##cms.cms.cdn##]/js/eventlist.js"></script>
+</body>
+</html>
