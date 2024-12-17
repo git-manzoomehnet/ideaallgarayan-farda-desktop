@@ -1234,6 +1234,10 @@ video {
   max-width: 0px;
 }
 
+.max-w-\[100vw\] {
+  max-width: 100vw;
+}
+
 .max-w-\[1300px\] {
   max-width: 1300px;
 }
@@ -2299,6 +2303,10 @@ video {
   border-radius: 20px;
 }
 
+.rounded-\[29px\] {
+  border-radius: 29px;
+}
+
 .rounded-\[30px\] {
   border-radius: 30px;
 }
@@ -2590,6 +2598,10 @@ video {
 
 .bg-white\/\[0\.25\] {
   background-color: rgb(255 255 255 / 0.25);
+}
+
+.bg-white\/\[0\.6\] {
+  background-color: rgb(255 255 255 / 0.6);
 }
 
 .from-black {
@@ -4052,7 +4064,8 @@ header.pink .searchIcon svg path {
   .learning-C header,
   .eventlist-C header,
   .eventShow header,
-  .productShow header{
+  .productShow header,
+  .formPage header{
   background-color: #E8E1E380;
 }
 
@@ -4061,7 +4074,8 @@ header.pink .searchIcon svg path {
   .learning-C header a,
   .eventlist-C header a,
   .eventShow header a,
-  .productShow header a{
+  .productShow header a,
+  .formPage header a{
   color: #181818;
 }
 
@@ -4070,7 +4084,8 @@ header.pink .searchIcon svg path {
   .learning-C header .logoWhite,
   .eventlist-C header .logoWhite,
   .eventShow header .logoWhite,
-  .productShow header .logoWhite{
+  .productShow header .logoWhite,
+  .formPage header .logoWhite{
   opacity: 0;
   pointer-events: none;
 }
@@ -4080,7 +4095,8 @@ header.pink .searchIcon svg path {
   .learning-C header .logoDark,
   .eventlist-C header .logoDark,
   .eventShow header .logoDark,
-  .productShow header .logoDark{
+  .productShow header .logoDark,
+ .formPage header .logoDark{
   opacity: 1;
   pointer-events: all;
 }
@@ -4090,7 +4106,8 @@ header.pink .searchIcon svg path {
   .learning-C header .searchIcon svg path,
   .eventlist-C header .searchIcon svg path,
   .eventShow header .searchIcon svg path,
-  .productShow header .searchIcon svg path{
+  .productShow header .searchIcon svg path,
+.formPage header .searchIcon svg path{
   fill: #181818;
 }
 
@@ -4099,7 +4116,8 @@ header.pink .searchIcon svg path {
   .learning-C header,
   .eventlist-C header,
   .eventShow header,
-  .productShow header{
+  .productShow header,
+  .formPage header{
   border-bottom: 1px solid #181818;
 }
 
@@ -4184,6 +4202,100 @@ a:hover{
   width: 100%;
   height: 100%;
   background-color: #4343433e;
+}
+
+.learning-C .swiper-pagination-bullet{
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.learning-C .swiper-pagination {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  display: flex;
+  gap: .3em;
+  margin: auto;
+  background-color: #E8E1E3;
+  justify-content: center;
+  border-radius: 37px;
+  padding: .4em .8em;
+  left: 0;
+  right: 0;
+  transition:all .4s ;
+  bottom: 1.8em;
+}
+
+.learning-C .swiper-pagination-bullet-active{
+  background-color: #fc578c !important;
+}
+
+.learning-C .section2 h4{
+  transform: translateY(2em);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.learning-C .section2  p{
+  transform: translateY(2em);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.learning-C .section2 .swiper-slide-active h4{
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.learning-C .section2 .swiper-slide-active p{
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.learning-C .section2 .swiper-slide .IMG img{
+  transform: scale(1.2) ;
+  transition: all 1s ease;
+  clip-path: inset(0px 0px 100% 0px);
+}
+
+.learning-C .section2 .swiper-slide-active .IMG img{
+  transform: scale(1) !important;
+  clip-path: inset(0px 0px 0px 0px);
+}
+
+.loader {
+  width: 25px;
+  height: 50px;
+  display: grid
+;
+  color: #fc578c;
+  background: linear-gradient(currentColor 0 0) top / 100% 2px, radial-gradient(farthest-side at top, #0000 calc(100% - 2px), currentColor calc(100% - 1px), #0000) top, linear-gradient(currentColor 0 0) bottom / 100% 2px, radial-gradient(farthest-side at bottom, #0000 calc(100% - 2px), currentColor calc(100% - 1px), #0000) bottom;
+  background-size: 100% 1px, 100% 50%;
+  background-repeat: no-repeat;
+  animation: l18 4s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  background: inherit;
+  border: inherit;
+  animation: inherit;
+}
+
+.loader::after {
+  animation-duration: 2s;
+}
+
+@keyframes l18 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 @media (min-width: 480px) {

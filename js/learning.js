@@ -25,28 +25,22 @@
 
 })
 gsap.registerPlugin(ScrollTrigger);
-const interleaveOffset = 0.5;
 let swiperBanner = new Swiper('.swiper-content', {
     loop: false,
-    direction: "vertical",
     autoplay: false,
-    speed: 1000,
+    speed: 2000,
     effect:'fade',
-    fadeEffect: {
-        crossFade: true,
-      },
+
     grabCursor: false,
-    watchSlidesProgress: true,
-    mousewheelControl: true,
-    mousewheel: true,
-    //   pagination: {
-    //     el: '.sec-1 .swiper-pagination',
-    //     clickable: true,
-    //     type: 'bullets',
-    //     renderBullet: function (index, className) {
-    //     return '<span class="' + className + '">'  + '</span>';
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'bullets',
+        renderBullet: function (index, className) {
+        return '<span class="' + className + '">'  + '</span>';
     
-    //     }
-    //   },
+        }
+      },
    
     });
