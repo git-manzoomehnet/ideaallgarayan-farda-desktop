@@ -1,1 +1,42 @@
-رویدادها
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]"> <member name="mblog" type="list" size="290x289"  link="article.bc" propertyid="7244,7249" postsql=" select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.mblog]"/> </basis>	
+
+
+
+   <basis core="print" datamembername="db.mblog">
+                    <layout>
+                        @child
+                    </layout>
+                    <else-layout>
+                        <div class="para font-IRANSans400 text-text_black text-sm">
+                            <p>
+                                متاسفانه مقاله‌ای موجود نیست.
+                            </p>
+                        </div>
+                    </else-layout>
+                    <face>
+                        <div class="blogItem mb-8 rounded-[35px] border border-text_black px-4 py-5">
+                            <div class="imgS mb-5 rounded-[35px] overflow-hidden">
+                                <a aria-label="@title" class="w-full h-full" href="/@link" title="@title">
+                                    <img src="/@00290X00289prp" class="w-full" alt="@title" title="@title">
+                                </a>
+                            </div>
+                            <div class="title mb-4 justify-between items-center flex">
+                                <a href="/@link" title="@title">
+            
+                                    <h2 class="font-IRANSans500 text-[15px] text-text_black">
+                                    @title
+                                    </h2>
+                                </a>
+                                <span class="font-IRANSans400 text-sm text-text_black">
+                                   @prp_7249
+                                </span>
+                            </div>
+                            <div class="para font-IRANSans400 text-sm text-text_black text-justify">
+                                <p>
+@substr
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </face>
+                </basis>

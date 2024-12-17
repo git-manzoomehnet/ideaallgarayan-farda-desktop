@@ -101,7 +101,7 @@ let sections = document.querySelectorAll('.section')
 // news slider
   let NewsSlider = new Swiper('.swiper-news',{
     speed: 1000,
-    slidesPerView:'auto',
+    slidesPerView:'2',
     spaceBetween: 30,
     grabCursor:true, 
   })
@@ -109,6 +109,7 @@ let sections = document.querySelectorAll('.section')
   gsap.to('.news',{
     y:0,
     opacity:1,
+    ease:'none',
   scrollTrigger:{
     trigger:'.section-5',
     start:'top 80%',

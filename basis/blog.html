@@ -1,58 +1,72 @@
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" >
-     <member request="cat" type="tree" name="filterBlog" parentid="211806" size="158x253"></member> 
+    <member request="cat" type="tree" name="filterBlog" parentid="211806" size="158x253"></member> 
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="211806">
-     <member name="blog" type="list" size="349x289" propertyid="7244,7249"
-      postsql=" select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.blog]"/>
- </basis>
+    <member name="blog" type="list" size="349x289" propertyid="7244,7249"
+     postsql=" select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.blog]"/>
+</basis>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وبلاگ</title>
-    <meta name="description" content="وبلاگ">
-    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>وبلاگ</title>
+   <meta name="description" content="وبلاگ">
+   <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
 </head>
 <body class="bg-main_light">
-    <main class="blog-C overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
-        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
-       <div class="blog-container w-95p flex-col flex mx-auto mt-[8em]">
-        <div class="Title w-auto my-[1em] flex justify-start items-start">
-            <h1 class="font-YekanBakh700 font-semibold text-[32px] leading-[49.6px] text-dark_gray text-right">
-                بلاگ
-            </h1>
-        </div>
-        <div class="Filters w-full flex gap-6">
-            <!-- <div class="btn w-auto group/btn hover:cursor-pointer flex justify-center items-center" data-catid="211806">
-                <span class="showMore group-[&.active]/btn:bg-white duration-200 group-hover/btn:bg-white
-                 mt-[1em] font-IRANSans400 text-[15px] rounded-[40px] border-main border-[1px] py-[.5em]
-                leading-23.48 text-justify text-dark px-[1em] w-max flex justify-center items-center bg-[#FFFFFF40]">
-                همه‌ی مقالات
-               </span>
-            </div> -->
-            <basis core="print" datamembername="db.filterBlog">
-                <layout>
-                    @child
-                </layout>
-                <face>
-                    <div class="btn w-auto group/btn hover:cursor-pointer flex justify-center items-center" data-catid="@catid">
-                        <span class="showMore group-[&.active]/btn:bg-white duration-200 group-hover/btn:bg-white
-                         mt-[1em] font-IRANSans400 text-[15px] rounded-[40px] border-main border-[1px] py-[.5em]
-                        leading-23.48 text-justify text-dark px-[1em] w-max flex justify-center items-center bg-[#FFFFFF40]">
-                        @title
-                       </span>
-                    </div>
-                </face>
-            </basis>
+   <main class="blog-C overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
+       <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
+      <div class="blog-container w-95p flex-col flex mx-auto mt-[8em]">
+       <div class="Title w-auto my-[1em] flex justify-start items-start">
+           <h1 class="font-YekanBakh700 font-semibold text-[32px] leading-[49.6px] text-dark_gray text-right">
+               بلاگ
+           </h1>
+       </div>
+       <div class="Filters w-full flex gap-6">
+           <!-- <div class="btn w-auto group/btn hover:cursor-pointer flex justify-center items-center" data-catid="211806">
+               <span class="showMore group-[&.active]/btn:bg-white duration-200 group-hover/btn:bg-white
+                mt-[1em] font-IRANSans400 text-[15px] rounded-[40px] border-main border-[1px] py-[.5em]
+               leading-23.48 text-justify text-dark px-[1em] w-max flex justify-center items-center bg-[#FFFFFF40]">
+               همه‌ی مقالات
+              </span>
+           </div> -->
+           <basis core="print" datamembername="db.filterBlog">
+               <layout>
+                   @child
+               </layout>
+               <face>
+                   <div class="btn w-auto group/btn hover:cursor-pointer flex justify-center items-center" data-catid="@catid">
+                       <span class="showMore group-[&.active]/btn:bg-white duration-200 group-hover/btn:bg-white
+                        mt-[1em] font-IRANSans400 text-[15px] rounded-[40px] border-main border-[1px] py-[.5em]
+                       leading-23.48 text-justify text-dark px-[1em] w-max flex justify-center items-center bg-[#FFFFFF40]">
+                       @title
+                      </span>
+                   </div>
+               </face>
+           </basis>
+        
          
-          
+       </div>
+      
+    <div class="section relative">
+        <div class="loaderContainer absolute hidden items-center justify-center inset-0">
+
+            <div class="loader"></div>
         </div>
         <div class="blogList gap-[3em] w-full max-w-[1300px] grid grid-cols-3 my-[3em]">
+      
             <basis core="print" datamembername="db.blog">
                 <layout>
                     @child
                 </layout>
+                <else-layout>
+                 <div class="para font-IRANSans400 text-text_black text-sm">
+                     <p>
+                         متاسفانه مقاله‌ای موجود نیست.
+                     </p>
+                 </div>
+             </else-layout>
                 <face>
                     <a href="@link" alt="@title" title="@title" rel="noopener" aria-label=" @title " class="blog w-full flex flex-col
                     gap-3 duration-1000 hover:bg-white translate-y-[2em] opacity-0
@@ -77,10 +91,12 @@
                 </face>
             </basis>
         </div>
-       </div>
-       <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />      
-    </main>
-    <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
-    <script src="[##cms.cms.cdn##]/js/blog.js"></script>
+    </div>
+   
+      </div>
+      <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />      
+   </main>
+   <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
+   <script src="[##cms.cms.cdn##]/js/blog.js"></script>
 </body>
 </html>

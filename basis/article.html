@@ -43,7 +43,25 @@
        
         </div>
         <div class="textContainer gap-[1em] mb-[2em] w-full flex justify-start items-center flex-col mt-[1.5em]">
-         
+            <basis core="print" datamembername="db.article">
+                <layout>
+                    <div class="TextC w-full flex flex-col justify-start items-start gap-[1em]">
+                    @child
+                    </div>
+                </layout>
+                <face filter="TypeID=129">
+                    <div class="title overflow-hidden w-auto flex justify-start items-start">
+                        <h2 class="font-IRANSans500 font-medium text-lg leading-28.17 text-dark_gray text-right">
+                            @text
+                        </h2>
+                    </div>
+                    <div class="text w-auto overflow-hidden flex justify-start items-start flex-col">
+                        <p  class="font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark_gray text-right">
+                        @largetext
+                     </p>
+                    </div>
+                </face>
+            </basis>
                 <basis core="print" datamembername="db.text">
                     <layout>
                         <div class="TextC w-full flex flex-col justify-start items-start gap-[1em]">

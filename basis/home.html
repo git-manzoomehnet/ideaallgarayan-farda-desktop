@@ -92,7 +92,7 @@
             </div>
        
         </section>
-        <section class="section section-3 flex items-end relative h-screen" id="section-3"
+        <section class="section section-3 flex items-center relative h-screen" id="section-3"
         style="background-image: url('[##cms.cms.cdn##]/images/image\ 4\ \(1\).png');">
           <div class="proCats-slider mx-auto w-90p flex justify-center items-center mb-[5em] overflow-hidden">
            <div class="swiper-proCat w-full flex justify-center items-center">
@@ -105,7 +105,7 @@
                        </layout>
                        <face level="2">
                            <li class="mb-7 text-center">
-                               <a alt=" @title" title=" @title"  rel="noopener" aria-label=" @title "
+                               <a href="@link" alt=" @title" title=" @title"  rel="noopener" aria-label=" @title "
                                 class="text-center font-IRANSans500 text-base text-text_black" >
                                    @title
                                </a>
@@ -204,7 +204,7 @@
                                   <div class="swiper-slide group/news w-full flex max-w-[298px]">
                                       <a href="@link" alt=" @title" title=" @title"  rel="noopener" aria-label=" @title " class="news w-full py-[1em] group-even/news:border-[transparent] group-even/news:bg-dark_gray
                                        flex flex-col max-w-[298px] border-[1px] border-dark_gray
-                                       group-even/news:translate-y-[100%] group-even/news:opacity-0 duration-1000
+                                       group-even/news:translate-y-[100%] group-even/news:opacity-0 duration-1000 delay-0 ease
                                        group-odd/news:translate-y-[-100%] group-odd/news:opacity-0">
                                           <div class="IMG w-90p mx-auto max-w-[298px]">
                                               <img src="[##cms.cms.cdn##]/@00298X00230prp" alt="@title"  title="@title"
@@ -282,56 +282,62 @@
       </basis>
      
          <div class="leftSec w-full  flex flex-wrap items-start justify-start">
-          <basis core="print" datamembername="db.def-event">
-              <layout>
-                  @child
-              </layout>
-              <face filter="Rownumber=1">
-             <div class="details mr-[3em] w-auto flex flex-col gap-2 max-w-[340px]">
-                 <div class="title gap-[1.5em] flex-col w-full flex justify-start items-start">
-                     <h4 class="font-YekanBakh700 font-semibold text-xl leading-31 text-dark_gray text-justify">
-                      @title
-                     </h4>
-                   
-                 </div>
-                 <div class="text w-full flex flex-col">
-                     <p class="font-IRANSans400 text-[15px] leading-23.48 text-dark_gray text-justify">
-                     @substr
-                  </p>
-                 </div>
-                
-             </div>
-              </face>
-          </basis>
-          <basis core="print" datamembername="db.def-event">
-              <layout>
-                  @child
-              </layout>
-              <face filter="Rownumber=2">
-                  <div class="details mr-[3em] w-auto justify-between items-center flex flex-col gap-2 max-w-[340px]">
-                      <div class="text w-full flex flex-col">
-                          <p class="font-IRANSans400 text-[15px] leading-23.48 text-dark_gray text-justify">
-                              @substr
-                           </p>
-                      </div>
-                     <a href="@link" class="eventBtn mx-auto my-auto w-max flex justify-center items-center border-[1px] border-black gap-4 py-[.5em] px-[1em]">
-                      <span class="IMG w-[60px] h-[50px]">
-                          <img src="[##cms.cms.cdn##]/@00558X00375prp" alt="@title" alt="@title" class="w-full h-full object-cover">
-                      </span>
-                      <span class="title w-auto flex justify-center items-center font-IRANSans400 font-normal text-xs leading-18.78 text-dark_gray
-                      text-right">
-                         @title
-                      </span>
-                      <span class="icon w-auto flex">
-                          <svg width="7" height="16" viewBox="0 0 7 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M6.14952 15.5L0.166748 9.5L6.14952 3.5L6.83277 4.18586L1.53453 9.5L6.83342 14.8141L6.14952 15.5Z" fill="#181818"/>
-                              </svg>
-                              
-                      </span>
-                     </a>
-                  </div>
-              </face>
-          </basis>
+            <div class="col w-[50%] h-full flex flex-col justify-between">
+                <basis core="print" datamembername="db.def-event">
+                    <layout>
+                        @child
+                    </layout>
+                    <face filter="Rownumber=1">
+                   <div class="details h-full mr-[3em] w-auto flex flex-col gap-2 max-w-[340px]">
+                       <div class="title gap-[1.5em] flex-col w-full flex justify-start items-start">
+                           <h4 class="font-YekanBakh700 font-semibold text-xl leading-31 text-dark_gray text-justify">
+                            @title
+                           </h4>
+                         
+                       </div>
+                       <div class="text w-full flex flex-col">
+                           <p class="font-IRANSans400 text-[15px] leading-23.48 text-dark_gray text-justify">
+                           @substr
+                        </p>
+                       </div>
+                      
+                   </div>
+                    </face>
+                </basis>
+            </div>
+            <div class="col w-[50%] h-full flex flex-col justify-between">
+                <basis core="print" datamembername="db.def-event">
+                    <layout>
+                        @child
+                    </layout>
+                    <face filter="Rownumber=2">
+                        <div class="details h-full mr-[3em] w-auto justify-between items-center flex flex-col gap-2 max-w-[340px]">
+                            <div class="text w-full flex flex-col">
+                                <p class="font-IRANSans400 text-[15px] leading-23.48 text-dark_gray text-justify">
+                                    @substr
+                                 </p>
+                            </div>
+                           <a href="@link" class="eventBtn mx-auto mt-auto w-max flex justify-center items-center border-[1px] border-black gap-4 py-[.5em] px-[1em]">
+                            <span class="IMG w-[60px] h-[50px]">
+                                <img src="[##cms.cms.cdn##]/@00558X00375prp" alt="@title" alt="@title" class="w-full h-full object-cover">
+                            </span>
+                            <span class="title w-auto flex justify-center items-center font-IRANSans400 font-normal text-xs leading-18.78 text-dark_gray
+                            text-right">
+                               @title
+                            </span>
+                            <span class="icon w-auto flex">
+                                <svg width="7" height="16" viewBox="0 0 7 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6.14952 15.5L0.166748 9.5L6.14952 3.5L6.83277 4.18586L1.53453 9.5L6.83342 14.8141L6.14952 15.5Z" fill="#181818"/>
+                                    </svg>
+                                    
+                            </span>
+                           </a>
+                        </div>
+                    </face>
+                </basis>
+            </div>
+       
+       
         
          </div>
      </div>
@@ -436,7 +442,7 @@
      </section>
        <nav class="fixNav fixed [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-200
         z-30 left-[3%] flex  h-fit top-0 bottom-0 my-auto rounded-[37px]">
-           <ul class="navigations w-auto  py-[1em] px-[1em] h-fit rounded-[37px] [&.dark]:bg-[#7E7E7E80] duration-200
+           <ul class="navigations w-auto  py-[1em] px-[.5em] h-fit rounded-[37px] [&.dark]:bg-[#7E7E7E80] duration-200
             bg-[#FFFFFF40] flex flex-col gap-3 justify-center items-center">
                <a href="#section-1"  class="nav w-[16px] group/nav active h-[16px] bg-white flex justify-center items-center rounded-full">
                    <span class="circle w-full h-full group-[&.active]/nav:bg-main duration-[.4s]  rounded-full"></span>
