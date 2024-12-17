@@ -29,12 +29,17 @@ titles.forEach(title=>{
 })
 // gallery slider
 let gallerySlider = new Swiper('.swiper-gallery ',{
-    speed: 1000,
-    slidesPerView:3,
-    spaceBetween: 0,
-    grabCursor:true, 
-    centeredSlides: true,
-    loop: true,
+  speed: 1000,
+  loop: true,
+  slidesPerView: 2 /* تعداد اسلایدها در یک زمان */,
+  spaceBetween: -60 /* کاهش فاصله بین اسلایدها */,
+  centeredSlides: true /* عکس وسط در مرکز قرار می‌گیرد */,
+    // speed: 1000,
+    // slidesPerView:3,
+    // spaceBetween: -60,
+    // grabCursor:true, 
+    // centeredSlides: true,
+    // loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"

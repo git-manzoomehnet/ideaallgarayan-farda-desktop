@@ -1,0 +1,14 @@
+.swiper-gallery .swiper-slide-prev .IMG {
+    transform-origin: center;
+    width: 100%;
+    transition: all 0.4s ease;
+    transform: scale(0.3) translateX(-39%);
+  }
+  
+  .swiper-gallery .swiper-slide-next .IMG {
+    transform-origin: center;
+    width: 100%;
+    transition: all 0.4s ease;
+    transform: scale(0.3) translateX(39%);
+  }
+  

@@ -256,10 +256,16 @@ header.pink .searchIcon svg path {
   transform: scale(0.5);
 }
 .swiper-gallery .swiper-slide-prev .IMG {
-  transform-origin: right;
+  transform-origin: center;
+  width: 100%;
+  transition: all 0.4s ease;
+  transform: scale(0.3) translateX(-39%);
 }
 .swiper-gallery .swiper-slide-next .IMG {
-  transform-origin: left;
+  transform-origin: center;
+  width: 100%;
+  transition: all 0.4s ease;
+  transform: scale(0.3) translateX(39%);
 }
 .gallery-container .swiper-button-prev,
 .gallery-container .swiper-button-next {
@@ -343,7 +349,7 @@ filter: grayscale(0) !important;
     transform-origin: right;
   }
   .swiper-gallery .swiper-slide-next .IMG{
-    transform-origin: left;
+    transform-origin: center;
   }
   .gallery-container .swiper-button-prev,
  .gallery-container .swiper-button-next{

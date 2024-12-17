@@ -1,114 +1,115 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
-     <member name="events" type="view"/> 
+    <member name="events" type="view"/> 
 </basis>
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##cms.query.id##]"> 
-        <member name="eventsGallery" type="list" format="4"/> 
+       <member name="eventsGallery" type="list" format="4"/> 
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
-    <member name="title" type="view" postsql="select * from [db.title] where TypeID=150"/> 
+   <member name="title" type="view" postsql="select * from [db.title] where TypeID=150"/> 
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
-    <member name="text" type="view" postsql="select * from [db.text] where TypeID=250"/> 
+   <member name="text" type="view" postsql="select * from [db.text] where TypeID=250"/> 
 </basis>
 <basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
-    <member request="json-ld" type="scalar" name="fq" />
- </basis>
+   <member request="json-ld" type="scalar" name="fq" />
+</basis>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[##cms.seo.title##]</title>
-    <meta name="description" content="[##cms.seo.description##]">
-    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>[##cms.seo.title##]</title>
+   <meta name="description" content="[##cms.seo.description##]">
+   <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
+   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/f-style.css">
 </head>
 <body>
-    <main class="eventShow bg-light_gray overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
-        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
-      <div class="eventShow-container mt-[6em] w-90p mx-auto flex flex-col max-w-[1300px]">
-        <div class="Title w-full overflow-hidden flex justify-start my-[2em] items-start">
-            <h1 class="font-YekanBakh700 translate-y-[3em] opacity-0 font-semibold text-xl leading-31 text-dark_gray text-right">
-                [##db.title.Answer##]
-            </h1>
-        </div>
-        <div class="Banner w-full flex justify-center items-center ">
-            <basis core="print" datamembername="db.eventsGallery">
-                <layout>
-                    @child
-                </layout>
-                <face filter="ord=1">
-            <img src="@largeIMG" alt="[##db.title.Answer##]" title="[##db.title.Answer##]" class="w-full object-cover ">
-                </face>
-            </basis>
-        </div>
-        <div class="textContainer gap-[1em] mb-[2em] w-full flex justify-start items-center flex-col mt-[1.5em]">
-            <basis core="print" datamembername="db.text">
-                <layout>
-                    <div class="TextC w-full flex flex-col justify-start items-start gap-[1em]">
-                    @child
-                    </div>
-                </layout>
-                <face>
-                    <div class="title overflow-hidden w-auto flex justify-start items-start">
-                        <h2 class="font-IRANSans500 font-medium text-lg leading-28.17 text-dark_gray text-right">
-                            @text
-                        </h2>
-                    </div>
-                    <div class="text w-auto overflow-hidden flex justify-start items-start flex-col">
-                        <p  class="font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark_gray text-right">
-                            @largetext
-                         </p>
-                    </div>
-                </face>
-            </basis>
-     
-        </div>
-        <basis core="print" datamembername="db.eventsGallery">
-            <layout>
-                <div class="gallery-container relative w-95p mx-auto flex py-[3em]">
-                    <div class="title my-[1.5em] absolute top-0 right-0 w-95p mx-auto flex justify-start items-start">
-                        <h5 class="font-YekanBakh700 font-semibold text-[32px] leading-[49.06px] text-dark_gray">
-                            گالری تصاویر
-                        </h5>
-                     </div>
-                     <div class="swiper-gallery w-full flex overflow-hidden">
-                        <div class="swiper-wrapper w-full">
-                @child
-                        </div>
-                     </div>
-                     <div class="swiper-button-prev">
-                        <svg width="17" height="32" viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.2561 32L0 16L15.2561 0L16.9984 1.82896L3.48785 16L17 30.171L15.2561 32Z" fill="#FC578C"/>
-                            </svg>
-                            
-                    </div>
-                <div class="swiper-button-next">
-                    <svg width="17" height="32" viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.74393 0L17 16L1.74393 32L0.00164032 30.171L13.5121 16L0 1.82897L1.74393 0Z" fill="#FC578C"/>
-                        </svg>
-                        
-                </div>
-                </div>
-            </layout>
-            <face filter="ord=1000">
-                <div class="swiper-slide w-full  flex justify-center max-w-[748px]">
-                    <div class="IMG w-full duration-150 ">
-                        <img src="@largeIMG" alt="[##db.title.Answer##]" title="[##db.title.Answer##]"
-                         class="w-full h-full max-w-[748px] object-cover grayscale-[1] duration-150">
-                    </div>
-                </div>
-            </face>
-        </basis>
+   <main class="eventShow bg-light_gray overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
+       <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
+     <div class="eventShow-container mt-[6em] w-90p mx-auto flex flex-col max-w-[1300px]">
+       <div class="Title w-full overflow-hidden flex justify-start my-[2em] items-start">
+           <h1 class="font-YekanBakh700 translate-y-[3em] opacity-0 font-semibold text-xl leading-31 text-dark_gray text-right">
+               [##db.title.Answer##]
+           </h1>
+       </div>
+       <div class="Banner w-full flex justify-center items-center ">
+           <basis core="print" datamembername="db.eventsGallery">
+               <layout>
+                   @child
+               </layout>
+               <face filter="ord=1">
+           <img src="@largeIMG" alt="[##db.title.Answer##]" title="[##db.title.Answer##]" class="w-full object-cover ">
+               </face>
+           </basis>
+       </div>
+       <div class="textContainer gap-[1em] mb-[2em] w-full flex justify-start items-center flex-col mt-[1.5em]">
+           <basis core="print" datamembername="db.text">
+               <layout>
+                   <div class="TextC w-full flex flex-col justify-start items-start gap-[1em]">
+                   @child
+                   </div>
+               </layout>
+               <face>
+                   <div class="title overflow-hidden w-auto flex justify-start items-start">
+                       <h2 class="font-IRANSans500 font-medium text-lg leading-28.17 text-dark_gray text-right">
+                           @text
+                       </h2>
+                   </div>
+                   <div class="text w-auto overflow-hidden flex justify-start items-start flex-col">
+                       <p  class="font-IRANSans400 font-normal text-[15px] leading-23.48 text-dark_gray text-right">
+                           @largetext
+                        </p>
+                   </div>
+               </face>
+           </basis>
     
-      </div>
+       </div>
+       <basis core="print" datamembername="db.eventsGallery">
+           <layout>
+               <div class="gallery-container relative w-full mx-auto flex py-[3em]">
+                   <div class="title my-[1.5em] absolute top-0 right-0 w-95p mx-auto flex justify-start items-start">
+                       <h5 class="font-YekanBakh700 font-semibold text-[32px] leading-[49.06px] text-dark_gray">
+                           گالری تصاویر
+                       </h5>
+                    </div>
+                    <div class="swiper-gallery w-full flex overflow-hidden">
+                       <div class="swiper-wrapper w-full">
+               @child
+                       </div>
+                    </div>
+                    <div class="swiper-button-prev">
+                       <svg width="17" height="32" viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M15.2561 32L0 16L15.2561 0L16.9984 1.82896L3.48785 16L17 30.171L15.2561 32Z" fill="#FC578C"/>
+                           </svg>
+                           
+                   </div>
+               <div class="swiper-button-next">
+                   <svg width="17" height="32" viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M1.74393 0L17 16L1.74393 32L0.00164032 30.171L13.5121 16L0 1.82897L1.74393 0Z" fill="#FC578C"/>
+                       </svg>
+                       
+               </div>
+               </div>
+           </layout>
+           <face filter="ord=1000">
+               <div class="swiper-slide w-full  flex justify-center max-w-[748px]">
+                   <div class="IMG w-full duration-150 ">
+                       <img src="@largeIMG" alt="[##db.title.Answer##]" title="[##db.title.Answer##]"
+                        class="w-full h-full max-w-[748px] object-cover grayscale-[1] duration-150">
+                   </div>
+               </div>
+           </face>
+       </basis>
+   
+     </div>
 
-      <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />     
-    </main>
-    <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
-    <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
-    <script src="[##cms.cms.cdn##]/js/event.js"></script>
-    <script type="application/ld+json">
-        [##json.fq.column1##]
-      </script>
+     <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />     
+   </main>
+   <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
+   <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
+   <script src="[##cms.cms.cdn##]/js/event.js"></script>
+   <script type="application/ld+json">
+       [##json.fq.column1##]
+     </script>
 </body>
 </html>
