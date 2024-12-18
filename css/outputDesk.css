@@ -4487,6 +4487,10 @@ header, footer{
   direction: rtl !important;
 }
 
+.openModal{
+  transform: translateY(0)!important;
+}
+
 @media (min-width: 480px) {
   .sm\:container {
     width: 100%;

@@ -743,5 +743,7 @@ opacity: 1;
 }
 
 header, footer{
-  direction: rtl !important;
+  direction: rtl !important;}
+.openModal{
+  transform: translateY(0)!important;
 }
