@@ -19,3 +19,12 @@ const imgsSlider = new Swiper(".imgsSlider", {
     swiper: thumbsSlider,
   },
 });
+let openModal = document.querySelector(".openModal"),
+  modalContainer = document.querySelector(".modal-Container"),
+  closeModal = document.querySelector(".modal-Container .close");
+openModal.addEventListener("click", function (e) {
+  modalContainer.classList.add("openModal");
+}),
+  closeModal.addEventListener("click", function (e) {
+    modalContainer.classList.remove("openModal");
+  });
