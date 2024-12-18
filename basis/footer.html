@@ -40,15 +40,19 @@
                    </span>
                </face>
            </basis>
-           <basis core="print" datamembername="db.contactus">
+
+           <basis core="view" datamembername="db.contactus">
                <layout>
                    @child
                </layout>
 
-               <face filter="TypeID=242">
-                   <span class="social font-IRANSans400 font-normal text-xs leading-18.78 text-white text-right">
-                       ایمیل: @text
-                   </span>
+               <face level="1" filter="TypeID=242">
+                   <a href="mailto:@text" class="social font-IRANSans400 font-normal text-xs leading-18.78 text-white text-right">
+                       ایمیل: @child
+                   </a>
+               </face>
+               <face level="2">
+                @text
                </face>
            </basis>
           
