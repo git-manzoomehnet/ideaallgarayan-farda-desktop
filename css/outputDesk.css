@@ -3571,6 +3571,10 @@ video {
   transition-delay: 0s;
 }
 
+.delay-\[1s\] {
+  transition-delay: 1s;
+}
+
 .duration-1000 {
   transition-duration: 1000ms;
 }

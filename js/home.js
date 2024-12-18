@@ -109,7 +109,7 @@ let sections = document.querySelectorAll('.section')
   gsap.to('.news',{
     y:0,
     opacity:1,
-    ease:'none',
+    ease: "circ.out",
   scrollTrigger:{
     trigger:'.section-5',
     start:'top 80%',
