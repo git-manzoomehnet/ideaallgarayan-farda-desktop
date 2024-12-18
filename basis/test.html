@@ -1,42 +1,303 @@
-<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]"> <member name="mblog" type="list" size="290x289"  link="article.bc" propertyid="7244,7249" postsql=" select *, SUBSTR(prp_7244, 1,100-CHARINDEX(' ', REVERSE(SUBSTR(prp_7244, 1, 100)))) || '...' as substr from [db.mblog]"/> </basis>	
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1" >
+    <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]" > 
+    <member request="json-ld" type="scalar" name="fq" /> 
+   </basis>
 
+   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="20" usedforid="[##cms.query.id##]">
+    <member name="product" type="view" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="20" usedforid="[##cms.query.id##]">
+    <member name="image-product" type="list" format="4" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="20" usedforid="[##cms.query.id##]"> <member type="list" name="relatedPro" size="259x304" blgid="18" /> </basis>	
 
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <!-- <link rel='stylesheet' href='[##cms.cms.cdn##]/css/bootstrap.min.css'> -->
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/mobile-form.css">
 
-   <basis core="print" datamembername="db.mblog">
-                    <layout>
-                        @child
-                    </layout>
-                    <else-layout>
-                        <div class="para font-IRANSans400 text-text_black text-sm">
-                            <p>
-                                متاسفانه مقاله‌ای موجود نیست.
-                            </p>
-                        </div>
-                    </else-layout>
-                    <face>
-                        <div class="blogItem mb-8 rounded-[35px] border border-text_black px-4 py-5">
-                            <div class="imgS mb-5 rounded-[35px] overflow-hidden">
-                                <a aria-label="@title" class="w-full h-full" href="/@link" title="@title">
-                                    <img src="/@00290X00289prp" class="w-full" alt="@title" title="@title">
-                                </a>
-                            </div>
-                            <div class="title mb-4 justify-between items-center flex">
-                                <a href="/@link" title="@title">
-            
-                                    <h2 class="font-IRANSans500 text-[15px] text-text_black">
-                                    @title
-                                    </h2>
-                                </a>
-                                <span class="font-IRANSans400 text-sm text-text_black">
-                                   @prp_7249
-                                </span>
-                            </div>
-                            <div class="para font-IRANSans400 text-sm text-text_black text-justify">
-                                <p>
-@substr
-                                </p>
-                            </div>
-                        </div>
+   <basis core="call" file="styles.inc" />
+</head>
+<body>
+    <main class="productShow bg-light_gray overflow-hidden flex flex-col justify-between min-h-screen" dir="rtl">
+      <basis core="call" file="header1.inc" />
+      <div class="productShow-container w-90p mx-auto flex flex-col max-w-[1300px]">
+      <section class="section-1 w-full pt-[140px] grid grid-cols-2 gap-5 aboutpro">
+        <div class="ImgSlider w-full flex flex-col">
+            <div class="swiper imgsSlider w-full flex max-h-[718px]">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper w-full">
+                  <!-- Slides -->
+
+                  <basis core="print" datamembername="db.image-product">
+                 
+                      <face filter="ord=1000">
+                          <div class="swiper-slide w-full flex">
+                            
+                              <div class="imgS w-full">
+                                  <img class="w-full object-cover" src="[##cms.cms.cdn##]/@largeIMG" alt="@name">
+                              </div>
+        
+                          </div>
+                          
+                      </face>
+                  </basis>
+               
+
+                </div>
+             
+              </div>
+
+              <div class="thumbs flex items-center justify-center mt-5 w-85p mx-auto relative">
+                  <div class="swiper w-90p mx-auto thumbsSlider">
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+
+                        <basis core="print" datamembername="db.image-product">
+                    
+                            <face filter="ord=1000">
+                                <div class="swiper-slide">
+                                  
+                                    <div class="imgS w-full">
+                                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" title="@name">
+                                    </div>
+              
+                                </div>
+                                
+                            </face>
+                        </basis>
+                    
+                        
+
+                      </div>
+                   
+                    </div>
+                    <div class="nextThumb absolute right-0">
+                        <svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.02584 0.5L10 9.5L1.02584 18.5L0.000965118 17.4712L7.94832 9.5L0 1.52879L1.02584 0.5Z" fill="#434343"/>
+                            </svg>
+                            
+                    </div>
+                    <div class="prevThumb absolute left-0">
+                        <svg class="rotate-180" width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.02584 0.5L10 9.5L1.02584 18.5L0.000965118 17.4712L7.94832 9.5L0 1.52879L1.02584 0.5Z" fill="#434343"/>
+                            </svg>
+                            
+                    </div>
+              </div>
+        </div>
+        <div class="Detail w-full flex flex-col gap-[1em]">
+            <div class="titles w-full flex flex-col">
+             <span class="title w-auto flex justify-start items-start">
+                <basis core="print" datamembername="db.product">
+                  
+                    <face filter="TypeID=150">
+                        <h1 class="font-YekanBakh700 titlePro text-[32px] leading-[49.06px] text-dark_gray font-bold">
+                           @Answer
+                        </h1>
                         
                     </face>
                 </basis>
+             </span>
+             <!-- <span class="nik w-auto flex justify-start items-start">
+                <p class="font-IRANSans400 text-xs leading-18.78 text-dark_gray font-normal">
+                    فورمالاسیون ایتالیا
+                </p>
+             </span> -->
+
+            </div>
+            <div class="detail w-full flex flex-col">
+                <basis core="print" datamembername="db.product">
+                   
+                    <face filter="TypeID=144">
+                        <p class="font-IRANSans400 text-xs leading-18.78 text-dark_gray font-normal text-justify">
+                        @Answer
+                        </p>
+                        
+                    </face>
+                </basis>
+            </div>
+            <button type="button" class="btn bg-text_black rounded-[15px] openModal
+            py-2.5 px-16 text-white font-IRANSans400 text-[15px] my-[2em]
+             hover:text-white focus:text-white outline-none hover:outline-none 
+             focus:outline-none w-full" data-toggle="modal" data-target=".bs-example-modal-new">
+              فرم سفارش محصول
+             </button>
+
+
+            
+             <div class="modal-Container pt-5 fixed duration-1000 inset-0 h-svh w-svw bg-black/[0.3] -translate-y-[160%]" style="z-index: 100000;">
+
+                <!-- Modal Content: begins -->
+                <div class="modal-content bg-white rounded-[20px] w-90p mx-auto h-full overflow-y-auto" style="max-width: 650px;margin-top: 60px;">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header mt-5 border-0 w-90p mx-auto text-[30px]">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+
+                    <!-- Modal Body -->
+                    <div class="modal-body formPage">
+                        <div class="body-message">
+                            <h4 class="font-IRANSans400 text-lg text-dark_gray mb-5 w-90p mx-auto">
+                                سفارش محصول
+                            </h4>
+
+
+                            <div class="formContainer relative w-90p mx-auto">
+                                <div class="loaderContainer absolute flex items-center justify-center inset-0 bg-white/[0.6]">
+                                    <div class="loader"></div>
+                                </div>
+                                <form name="myForm" class="homeForm1" action="" onsubmit="return validateForm()" method="post">
+                                    <basis core="schema" run="atclient"
+                                        schemaUrl="/schema/domainform/C30901D4-E151-4A17-838B-1121DEDBE915/75D56E7A-90F7-4D96-B7A1-F80E8436445B/fa/فرم-درخواست-محصول"
+                                        displayMode="new" button="[data-btn-add1]" resultSourceId="demo.data1" onRendered="renderFn1">
+                                    </basis>
+                                    <basis core="callback" run="AtClient" triggers="demo.data1" method="onSource1"></basis>
+                                    <basis core="api" url="/schema/domainform/C30901D4-E151-4A17-838B-1121DEDBE915/fa/editobject"
+                                        method="post" run="atclient"
+                                        body="object_edit={##edit.object1.value##}&captcha={##edit.object1.captcha##}&captchaid={##edit.object1.captchaid##}"
+                                        content-type="application/x-www-form-urlencoded" triggers="edit.object1" if="{##edit.object1##}"
+                                        OnProcessed="OnProcessedEditObject1" onRendered="renderEditobject">
+                                    </basis>
+                                    <div data-bc-question="" class="qclass8 w-fit" style="width: 100%;">
+                                        <div class="responsMsg1 responsMsg">
+                                            <span>فرم با موفقیت ثبت شد.</span>
+                                        </div>
+                                        <div id="requestBox" class="captchaContainerclass captcha-sefaresh2" style="margin-bottom: 20px"
+                                            data-bc-answer-container="" data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
+                                            data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
+                                            <basis core="dbsource" source="trust_login" name="captcha1" triggers="cms.reload1"
+                                                run="atclient">
+                                                <member name="code1" type="scalar" request="captcha"></member>
+                                            </basis>
+                                            <basis datamembername="captcha1.code1" core="print" run="atclient">
+                                                <face>
+                                                    <script type="text/template">
+                
+                                            <span class="captcha-sefaresh">
+                                                <img src="/@captcha@" alt="captcha" width="88" height="44" class="captcha-sefaresh"
+                                                title="captcha" />
+                                            <input type="hidden" name="captchaid" aria-label="captcha" value="@captcha@" />
+                                        </span>
+                                    <img src="[##cms.cms.cdn##]/images/cached.png" alt="refressh" class="refressh cursor-pointer refressh1" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                                    <input type="text" class="codeinputm" name="captcha" aria-label="captcha2" />
+                                    </script>
+                                                </face>
+                                            </basis>
+                                        </div>
+                                        <button class="flex bg-light_gray w-full items-center justify-center py-2.5 font-IRANSans400 text-sm text-dark_gray rounded-[29px] border border-main"
+                                            type="submit" data-btn-add1 data-btn-submit="">
+                                            <span class="font-IRANSansWeb400 text-sm text-nWhite"> ثبت</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- Modal Content: ends -->
+
+            </div>
+
+             <basis core="view" datamembername="db.product">
+                 <layout>
+                     
+                     
+                     @child
+                     
+                    </layout>
+                    
+                    <face level="1" filter="TypeID not in (150,144,159)">
+                        <div class="schemas mb-5 flex flex-col gap-2">
+                     <span class="font-IRANSans400 text-[15px] text-dark_gray leading-23.48 mb-2.5">
+                        @Question:
+                     </span>
+                     <div class="para font-IRANSans400 text-xs leading-18.78 text-dark_gray">
+                        @child
+                    </div>
+                    </div>
+                </face>
+                <face level="2">
+                     <p>
+@Answer
+                     </p>
+                 </face>
+             </basis>
+        </div>
+      </section>
+
+      <basis core="print" datamembername="db.relatedPro">
+          <layout>
+              <section class="section-2 relatedpro w-90p mx-auto my-8 mt-[6em]">
+                <h2 class="font-YekanBakh700 text-[32px] text-dark_gray mb-10">
+                    محصولات مرتبط
+                </h2>
+                <div class="productConatainer w-full grid gap-7" style="grid-template-columns: repeat(3,1fr);">
+                    @child
+                </div>
+            </section>
+        </layout>
+        <face>
+            
+            <div class="productBox  mb-10 last:mb-0">
+                <a href="/@link" title="@title" class="blog w-full flex flex-col
+          gap-3 duration-1000 hover:bg-white 
+          py-[1em] border-[1px] border-dark">
+             <div class="IMG w-90p mx-auto flex justify-center items-center">
+                 <img src="[##cms.cms.cdn##]/@00259X00304prp" alt="@title" class="w-full max-w-[259px] max-h-[304px] object-cover">
+             </div>
+             <div class="Title w-90p mx-auto flex justify-between items-center">
+                 <span class="text font-IRANSans500 font-medium text-lg leading-28.17 text-dark_gray text-right">
+                  @title
+                 </span>
+         
+             </div>
+           
+         </a>
+            </div>
+          </face>
+      </basis>
+      </div>
+
+
+
+
+
+<basis core="call" file="footer.inc" />
+
+    </main>
+
+
+    <basis core="call" file="script.inc" />
+    <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
+    <!-- <script src='[##cms.cms.cdn##]/_js/bootstrap3.3.7.min.js'></script> -->
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
+    <script src="[##cms.cms.cdn##]/js/product.js"></script>
+        <script src="[##cms.cms.cdn##]/js/mobile-productForm.js"></script>
+
+    <script type="application/ld+json"> 
+        [##json.fq.column1##] 
+        </script>
+</body>
+</html>
