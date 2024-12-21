@@ -620,7 +620,7 @@ opacity: 1;
 
 .searchContainer {
   width: 100vw;
-  height: 89vh;
+  height: 100vh;
   position: fixed;
   z-index: 100;
   transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -634,6 +634,8 @@ opacity: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: 198% !important;
   opacity: 0;
   pointer-events: none;
   bottom: 0;
@@ -676,9 +678,14 @@ opacity: 1;
   position: absolute;
   z-index: 100;
   right: 5%;
-  top: 5vh;
+  top: 7em;
 }
-
+.searchContainer .CloseSerch:hover{
+  cursor: pointer;
+}
+.searchContainer .CloseSerch  svg path{
+  fill: #181818;
+}
 .searchContainerr input,
 .searchContainer input {
   width: 100%;
@@ -746,4 +753,25 @@ header, footer{
   direction: rtl !important;}
 .openModal{
   transform: translateY(0)!important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .home .section-6 .rightSec {
+width: 50%;
+}
+.home .section-6 .rightSec .IMG {
+  min-width: unset;
+  width: 100%;
+}
+.home .section-6 .rightSec .IMG img {
+  min-width: unset;
+  width: 100%;
+  height: auto;
+}
+.home .section-6  .leftSec {
+  width: 100%;
+}
+.home .eventBtn {
+  width: 100%;
+}
 }
