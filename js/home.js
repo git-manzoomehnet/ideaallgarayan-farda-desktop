@@ -101,7 +101,7 @@ let sections = document.querySelectorAll('.section')
 // news slider
   let NewsSlider = new Swiper('.swiper-news',{
     speed: 1000,
-    slidesPerView:'2',
+    slidesPerView:'auto',
     spaceBetween: 30,
     grabCursor:true, 
   })
