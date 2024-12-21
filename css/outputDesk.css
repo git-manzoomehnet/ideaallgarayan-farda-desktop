@@ -4644,6 +4644,10 @@ header, footer{
   }
 }
 
+.productShow .modal-Container{
+  transform: translateY(-160%);
+}
+
 @media (min-width: 480px) {
   .sm\:container {
     width: 100%;
