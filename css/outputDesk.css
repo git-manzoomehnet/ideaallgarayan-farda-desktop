@@ -1171,6 +1171,10 @@ video {
   min-height: 100svh;
 }
 
+.\!w-\[65px\] {
+  width: 65px !important;
+}
+
 .\!w-fit {
   width: -moz-fit-content !important;
   width: fit-content !important;
@@ -1288,6 +1292,10 @@ video {
 
 .w-svw {
   width: 100svw;
+}
+
+.w-\[65px\] {
+  width: 65px;
 }
 
 .min-w-\[558px\] {
