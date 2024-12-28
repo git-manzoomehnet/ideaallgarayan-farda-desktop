@@ -84,3 +84,9 @@ setTimeout(() => {
 
   }
 });
+if(!document.querySelector('main.home')){
+  let scrltopBTN = document.querySelector('.scrollTopfooter')
+  scrltopBTN.addEventListener('click',()=>{
+    window.scrollTo(0,0)
+  })
+}

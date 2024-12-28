@@ -27,6 +27,7 @@ titles.forEach(title=>{
       }
     })
 })
+
 // gallery slider
 let gallerySlider = new Swiper('.swiper-gallery ',{
   speed: 1000,
@@ -43,5 +44,14 @@ let gallerySlider = new Swiper('.swiper-gallery ',{
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    },
+    on:{
+    init(){
+      setTimeout(() => {
+        document.querySelector('.gallery-container .swiper-button-prev').style.opacity=1
+        document.querySelector('.gallery-container .swiper-button-next').style.opacity=1
+  
+      }, 1000);
+    }
     }
   })

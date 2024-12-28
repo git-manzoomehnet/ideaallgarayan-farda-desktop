@@ -4,7 +4,7 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9645">
    <member name="socials" type="view" postsql="select * from [db.socials] where TypeID=245"/> 
 </basis>
-<footer class="DesktopFooter w-full flex bg-dark justify-center items-center py-[3em]">
+<footer class="DesktopFooter relative w-full flex bg-dark justify-center items-center py-[3em]">
    <div class="innerFooter w-95p mx-auto grid grid-cols-[1fr,3fr,1fr] gap-[5em]">
        <div class="col w-full flex flex-col">
           <div class="contact w-full flex flex-col gap-[1em]">
@@ -59,7 +59,7 @@
           </div>
           </div>
        </div>
-       <div class="col gap-[3em] w-full flex flex-wrap">
+       <div class="col gap-[2em] w-full flex flex-wrap">
        <nav class="footerMenu w-auto flex flex-col gap-[.5em]">
                       <a href="محصولات " alt="محصولات" title="محصولات" rel="noopener" aria-label="محصولات" class="menu-link pb-[.4em] relative font-IRANSans400 font-normal
                            duration-1000 before:content-[''] before:absolute before:bottom-0
@@ -134,9 +134,9 @@
                <face level="1">
                 <div class="ProCat w-auto flex flex-col gap-4">
                    <div class="titleCat procatsItems w-auto flex justify-start items-start " >
-                       <p class="font-IRANSans400 font-normal text-xs leading-18.78 text-mediumGray text-right">
+                       <a href="@link" alt=" @title" title=" @title"  rel="noopener" aria-label=" @title " class="font-IRANSans400 font-normal text-xs leading-18.78 text-mediumGray text-right">
                            @title
-                       </p>
+                       </a>
                    </div>
 
                    <ul class="cats w-auto flex flex-col gap-[.5em] justify-start items-start">
@@ -180,4 +180,12 @@
            </div>
        </div>
    </div>
+   <button class="scrollTopfooter w-[38px] [&.hide]:opacity-0 [&.hide]:pointer-events-none
+    [&.white]:bg-white [&.dark]:bg-medium_gray duration-200 h-[38px] bg-[#FFFFFF40] absolute bottom-[2em] left-[3%]
+   rounded-full flex justify-center items-center z-10" type="button">
+       <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M0 8.97416L9 0L18 8.97416L16.9712 9.99903L9 2.05168L1.02879 10L0 8.97416Z" fill="white"/>
+           </svg>
+           
+   </button>
   </footer>
