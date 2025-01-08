@@ -40,10 +40,12 @@ let inputt = document.querySelector('.searchContainer .inputBox input#search')
 searchBTN.addEventListener('click',()=>{
   search.classList.add('show')
   header2.classList.add('hideINSearch')
+  header2.classList.add('dark')
   // navv.classList.add('InSearch')
 })
 closeSearch.addEventListener('click',()=>{
   search.classList.remove('show')
+  header2.classList.remove('dark')
   header2.classList.remove('hideINSearch')
   // navv.classList.remove('InSearch')
 
@@ -52,6 +54,7 @@ closeSearch.addEventListener('click',()=>{
 
 
 searchIcon.addEventListener('click',()=>{
+
   let input = document.querySelector('.searchContainer .inputBox input#search')
       console.log('val',input.value);
       if(input.value == ''){
