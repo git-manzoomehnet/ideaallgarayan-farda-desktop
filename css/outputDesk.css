@@ -1346,6 +1346,10 @@ video {
   max-width: 445px;
 }
 
+.max-w-\[50\%\] {
+  max-width: 50%;
+}
+
 .max-w-\[558px\] {
   max-width: 558px;
 }
@@ -3725,6 +3729,10 @@ video {
   transition-duration: .5s;
 }
 
+.duration-\[\.8s\] {
+  transition-duration: .8s;
+}
+
 .contain-none {
   contain: none;
 }
@@ -4675,6 +4683,10 @@ main.productShow .section-1{
 
 main.productShow .section-2 {
   margin-top: 4em !important;
+}
+
+.learningShow-container{
+  height: 440px;
 }
 
 @media (min-width: 480px) {

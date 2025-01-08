@@ -8,7 +8,7 @@ let sections = document.querySelectorAll('.section')
     let scrTop = window.pageYOffset
     sections.forEach(sec =>{          
       let top = scrTop;
-      let offset = sec.offsetTop-110;
+      let offset = sec.offsetTop-600;
       let height= sec.offsetHeight;
       let id =sec.getAttribute('id')
       if(top>= offset && top < offset + height){
@@ -18,22 +18,31 @@ let sections = document.querySelectorAll('.section')
         return;
       }      
      else if(id =='section-6'){
+      console.log('section-6');
+      
         document.querySelector('header').classList.add('pink')
         document.querySelector('.scrollTop').classList.add('white')
         document.querySelector('ul.navigations').classList.add('dark')
       }
       else if(id =='section-5'){
+      console.log('section-5');
+
         document.querySelector('header').classList.add('pink')
         document.querySelector('.scrollTop').classList.add('white')
      
       }
       else if(id =='section-7'){
+      console.log('section-7');
+
         document.querySelector('header').classList.add('pink')
         document.querySelector('.scrollTop').classList.add('dark')
         document.querySelector('ul.navigations').classList.add('dark')
      
       }
+
       else if(id =='section-9'){
+      console.log('section-9');
+
         document.querySelector('.scrollTop').classList.add('dark')
 
      
@@ -49,6 +58,12 @@ let sections = document.querySelectorAll('.section')
       })
     }
   })
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    console.log('end')
+    document.querySelector('header').classList.remove('pink')
+    document.querySelector('.scrollTop').classList.remove('white')
+    document.querySelector('ul.navigations').classList.remove('dark')
+}
 
   })
 

@@ -1,4 +1,4 @@
- <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2365069"> 
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2365069"> 
     <member name="learning" type="view"/>
  </basis>
  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2365069"> 
@@ -144,7 +144,10 @@
     
         <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />  
     </main>
-    <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
+
+    <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/scrollTrigger.js"></script>
+    <script src="[##cms.cms.cdn##]/js/configDesk.js"></script>
     <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
     <script src="[##cms.cms.cdn##]/js/learning.js"></script>
 </body>
