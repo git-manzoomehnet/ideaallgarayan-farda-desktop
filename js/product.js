@@ -1,3 +1,4 @@
+
 const thumbsSlider = new Swiper(".thumbsSlider", {
   // Optional parameters
   loop: true,
@@ -8,7 +9,7 @@ const thumbsSlider = new Swiper(".thumbsSlider", {
     nextEl: ".nextThumb",
     prevEl: ".prevThumb",
   },
-  slidesPerView: 3,
+  slidesPerView: "auto",
   spaceBetween: 20,
 });
 

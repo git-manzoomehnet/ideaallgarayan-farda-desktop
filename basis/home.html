@@ -21,7 +21,7 @@
     <member name="def-about" type="view"/> 
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="11" catid="211847"> 
-   <member name="def-trainers" type="list" size="298x230" propertyid="2739" link=""/> 
+   <member name="def-trainers" type="list" size="298x230" propertyid="2739" link="learning.bc"  /> 
 </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="211808"> 
    <member name="def-event" type="list" size="558x375" propertyid="7244"
@@ -31,7 +31,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>ایده‌آل گرایان فردا</title>
+   <title>ایده‌آل گرایان فرداد</title>
    <meta name="description" content="صفحه اصلی ایده‌آل گرایان فردا">
    <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />
 </head>
@@ -74,9 +74,9 @@
                         @child
                     </layout>
                     <face filter="ord=1000">
-                        <video  class="lazy" id="loadVideo"
+                        <video id="loadVideo"
                         autoplay muted loop playsinline width="100%" height="100%"
-                         loop class="w-full h-full object-cover" >
+                         loop class="w-full lazy h-full object-cover" >
                          <source src="[##cms.cms.cdn##]/@largeIMG" type="video/mp4">
                         </video>
                     </face>
@@ -204,7 +204,7 @@
                                   <div class="swiper-slide group/news w-full flex max-w-[298px]">
                                       <a href="@link" alt=" @title" title=" @title"  rel="noopener" aria-label=" @title " class="news w-full py-[1em] group-even/news:border-[transparent] group-even/news:bg-dark_gray
                                        flex flex-col max-w-[298px] border-[1px] border-dark_gray
-                                       group-even/news:translate-y-[100%] group-even/news:opacity-0 duration-1000 delay-[1s] 
+                                       group-even/news:translate-y-[100%] group-even/news:opacity-0 duration-[.8s] delay-[.2s] 
                                        group-odd/news:translate-y-[-100%] group-odd/news:opacity-0">
                                           <div class="IMG w-90p mx-auto max-w-[298px]">
                                               <img src="[##cms.cms.cdn##]/@00298X00230prp" alt="@title"  title="@title"
@@ -261,9 +261,9 @@
      <section class="section flex-col  section-6 bg-light_gray relative flex justify-center items-center
      h-screen" id="section-6">
      <div class="title my-[1.5em] w-95p mx-auto flex justify-start items-start">
-      <h4 class="font-YekanBakh700 font-semibold text-[32px] leading-[49.06px] text-dark_gray">
+      <a href="/رویدادها" class="font-YekanBakh700 font-semibold text-[32px] leading-[49.06px] text-dark_gray">
           رویداد‌ها
-      </h4>
+      </a>
    </div>
      <div class="events-container w-95p mx-auto flex">
       <basis core="print" datamembername="db.def-event">

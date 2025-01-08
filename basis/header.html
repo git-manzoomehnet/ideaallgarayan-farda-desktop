@@ -1,5 +1,5 @@
 <header class="DesktopHeader group/header [&.pink]:bg-[#E8E1E380]
-duration-200 z-[999] fixed top-0 left-0 right-0 py-[1.5em]
+duration-200 z-[999] fixed h-[10vh] top-0 left-0 right-0 py-[1.5em]
 flex justify-center border-b-[1px] border-b-white [&.pink]:border-dark_gray" dir="rtl">
    <div class="innerHeader w-95p mx-auto grid grid-cols-[3fr,1fr,3fr]">
        <div class="Right w-full flex justify-start items-center">
@@ -24,6 +24,17 @@ flex justify-center border-b-[1px] border-b-white [&.pink]:border-dark_gray" dir
                            آموزش
                        </a>
                    </li>
+
+    <li class="menu-item translate-x-[-2em] opacity-0 duration-1000 w-auto flex justify-start items-start">
+                       <a href="رویدادها " alt="رویدادها" title="رویدادها" rel="noopener" aria-label="رویدادها" class="menu-link pb-[.4em] relative font-IRANSans400 font-normal
+                       duration-1000 before:content-[''] before:absolute before:bottom-0
+                       before:left-0 before:z-1 before:w-0 before:h-[1px] before:bg-main before:right-0
+                       before:mx-auto hover:before:w-full before:duration-1000 text-[15px] text-white leading-23.48
+                       group-[&.pink]/header:text-dark_gray">
+                           رویدادها
+                       </a>
+                   </li>
+
                    <li class="menu-item translate-x-[-2em] opacity-0 duration-1000 w-auto flex justify-start items-start">
                        <a href="بلاگ " alt="بلاگ" title="بلاگ" rel="noopener" aria-label="بلاگ" class="menu-link pb-[.4em] relative font-IRANSans400 font-normal
                        duration-1000 before:content-[''] before:absolute before:bottom-0
@@ -88,13 +99,13 @@ flex justify-center border-b-[1px] border-b-white [&.pink]:border-dark_gray" dir
     <member request="cat" type="tree" name="productCat" parentid="211813" 
     postsql="select * from [db.productCat] where catid not in (211813)"/>
  </basis>
-<div class="fixed-bottomMenu z-[999] fixed top-[11vh] bg-[#E8E1E380] opacity-0 pointer-events-none duration-200
+<div class="fixed-bottomMenu z-[999] fixed top-[10vh] bg-[#E8E1E380] opacity-0 pointer-events-none duration-200
 left-0 right-0 flex justify-between items-center rounded-br-[100px] [&.openMenu]:opacity-[1]
  [&.openMenu]:pointer-events-auto
  rounded-bl-[100px]  py-[2em]" dir="rtl">
     <div class="innerMneu w-95p mx-auto flex justify-between items-center">
-        <div class="Right w-[50%] flex justify-start items-start">
-            <div class="Procats-container w-full flex flex-wrap gap-[1.5em]">
+        <div class="Right w-full flex justify-start items-start">
+            <div class="Procats-container w-full flex flex-wrap gap-[2em]">
               
                 <basis core="tree" datamembername="db.productCat" idcol="catid" parentidcol="parentid" nullvalue="211813">
                     <layout>
@@ -126,7 +137,7 @@ left-0 right-0 flex justify-between items-center rounded-br-[100px] [&.openMenu]
             
             </div>
            </div>
-           <div class="Left w-full flex justify-end items-end">
+           <div class="Left w-max max-w-[50%] flex justify-end items-end">
                <div class="procatIMG w-[533px] h-[227px] flex justify-start items-start">
                 <img src="[##cms.cms.cdn##]/images/menu.jpg" alt="menu" title=" menu" class="w-full h-full object-cover">
                </div>
