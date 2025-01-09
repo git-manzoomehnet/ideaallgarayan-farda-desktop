@@ -397,8 +397,11 @@ filter: grayscale(0) !important;
   .eventShow header,
   .productShow header,
   .formPage header,
-  .productCat header {
+  .productCat header{
     background-color: #E8E1E380;
+  }
+  header.dark {
+    background-color: transparent !important;
   }
   .blog-C header a,
   .articleShow header a,
@@ -407,7 +410,8 @@ filter: grayscale(0) !important;
   .eventShow header a,
   .productShow header a,
   .formPage header a,
-  .productCat header a{
+  .productCat header a,
+  header.dark a{
 color: #181818;
   }
   .blog-C header .logoWhite,
@@ -417,7 +421,8 @@ color: #181818;
   .eventShow header .logoWhite,
   .productShow header .logoWhite,
   .formPage header .logoWhite,
-  .productCat header .logoWhite{
+  .productCat header .logoWhite,
+  header.dark .logoWhit{
     opacity: 0;
     pointer-events: none;
   }
@@ -428,7 +433,8 @@ color: #181818;
   .eventShow header .logoDark,
   .productShow header .logoDark,
  .formPage header .logoDark,
- .productCat header .logoDark{
+ .productCat header .logoDark,
+ header.dark .logoDark{
     opacity: 1;
     pointer-events: all;
   }
@@ -439,7 +445,8 @@ color: #181818;
   .eventShow header .searchIcon svg path,
   .productShow header .searchIcon svg path,
 .formPage header .searchIcon svg path,
-.productCat header .searchIcon svg path{
+.productCat header .searchIcon svg path,
+header.dark .searchIcon svg path{
     fill: #181818;
   }
   .blog-C header,
@@ -449,7 +456,8 @@ color: #181818;
   .eventShow header,
   .productShow header,
   .formPage header,
-  .productCat header{
+  .productCat header,
+  header.dark{
     border-bottom: 1px solid #181818;
   }
 .articleShow .textContainer .title h2,
@@ -794,4 +802,7 @@ main.productShow .section-1{
 }
 main.productShow .section-2 {
   margin-top: 4em !important;
+}
+.learningShow-container{
+  height: 440px;
 }
