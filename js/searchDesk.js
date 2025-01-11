@@ -1,0 +1,1 @@
+const inputElement=document.querySelector("#searchbtn"),sendButton=document.querySelector("#searchbtnv");function sendValue(){const e=inputElement.value.trim();if(""!==e){const n=`search.bc?q=${encodeURIComponent(e)}`;window.location.href=n}}sendButton.addEventListener("click",sendValue),inputElement.addEventListener("keypress",(function(e){"Enter"===e.key&&sendValue()}));
